@@ -37,9 +37,10 @@ h2 {
   font-size: 60px;
 }
 
-.menu{
+.menu {
   display: none;
 }
+
 .logo {
   width: 200px;
   height: 100px;
@@ -50,7 +51,7 @@ h2 {
 
 .logo img {
   width: 100%;
-  
+
 }
 
 .navbar {
@@ -613,6 +614,14 @@ header {
 /*=======================================================================================================================*/
 /*                                                            skills                                                     */
 /*=======================================================================================================================*/
+.skill-container {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
 
 #skills {
   padding-bottom: 2rem;
@@ -637,11 +646,13 @@ header {
   list-style: none;
   letter-spacing: 2px;
 }
-.skill-name{
+
+.skill-name {
   margin-top: 40px;
   font-weight: 700;
   color: #cfb580;
 }
+
 /* 設定bar的外層樣式 */
 
 .skill-bar {
@@ -651,9 +662,20 @@ header {
   border-radius: 20px;
   position: relative;
   margin: 5px 30px;
-  box-shadow:-2px 0px 10px #081633c0 inset ;
+  box-shadow: -2px 0px 10px #081633c0 inset;
 }
 
+.skill-img-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.skill-img {
+  width: 150px
+}
 
 /* 設定bar的內層樣式 */
 
@@ -671,107 +693,124 @@ header {
   position: absolute;
   font-size: 16px;
   top: 0;
-  left: 0
-  ;
+  left: 0;
 }
 
-.skill-ae{
+.skill-ae {
   width: 95%;
   opacity: 0;
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: -1px -2px 2px #0b004948 inset ;
+  box-shadow: -1px -2px 2px #0b004948 inset;
   animation: skill-ae 1s 8s 1 forwards;
 }
-.skill-nuke{
+
+.skill-nuke {
   width: 85%;
   opacity: 0;
   background-image: linear-gradient(135deg, #30c79c 0%, #72afd3 100%);
-  box-shadow: -1px -2px 2px #0b004948 inset ;
+  box-shadow: -1px -2px 2px #0b004948 inset;
   animation: skill-nuke 1s 8.5s 1 forwards;
 }
-.skill-resolve{
+
+.skill-resolve {
   width: 90%;
   opacity: 0;
   background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-  box-shadow: -1px -2px 2px #0b004948 inset ;
+  box-shadow: -1px -2px 2px #0b004948 inset;
   animation: skill-resolve 1s 9s 1 forwards;
 }
-.skill-pr{
+
+.skill-pr {
   width: 70%;
   opacity: 0;
   background-image: linear-gradient(135deg, #57d8cf 0%, #c7a0df 100%);
-  box-shadow: -1px -2px 2px #0b004948 inset ;
+  box-shadow: -1px -2px 2px #0b004948 inset;
   animation: skill-pr 1s 9.5s 1 forwards;
 }
-.skill-mistika{
+
+.skill-mistika {
   width: 80%;
   opacity: 0;
   background-image: linear-gradient(135deg, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  box-shadow: -1px -2px 2px #0b004948 inset ;
+  box-shadow: -1px -2px 2px #0b004948 inset;
   animation: skill-mistika 1s 10s 1 forwards;
 }
 
 @keyframes skill-ae {
-  0%{
+  0% {
     opacity: 0;
     width: 0%;
   }
-  50%{
+
+  50% {
     opacity: 0.3;
   }
-  100%{
+
+  100% {
     opacity: 1;
     width: 95%;
-  } 
+  }
 }
+
 @keyframes skill-nuke {
-  0%{
+  0% {
     opacity: 0;
     width: 0%;
   }
-  50%{
+
+  50% {
     opacity: 0.3;
   }
-  100%{
+
+  100% {
     opacity: 1;
     width: 85%;
-  } 
+  }
 }
+
 @keyframes skill-resolve {
-  0%{
+  0% {
     opacity: 0;
     width: 0%;
   }
-  50%{
+
+  50% {
     opacity: 0.3;
   }
-  100%{
+
+  100% {
     opacity: 1;
     width: 90%;
-  } 
+  }
 }
+
 @keyframes skill-pr {
-  0%{
+  0% {
     opacity: 0;
     width: 0%;
   }
-  50%{
+
+  50% {
     opacity: 0.3;
   }
-  100%{
+
+  100% {
     opacity: 1;
     width: 70%;
-  } 
+  }
 }
+
 @keyframes skill-mistika {
-  0%{
+  0% {
     opacity: 0;
     width: 0%;
   }
-  50%{
+
+  50% {
     opacity: 0.3;
   }
-  100%{
+
+  100% {
     opacity: 1;
     width: 80%;
   }
@@ -783,34 +822,38 @@ header {
 /*=======================================================================================================================*/
 /*                                                        experience                                                      */
 /*=======================================================================================================================*/
-#experience >h2{
+#experience>h2 {
   margin-bottom: 20px;
 }
 
-#experience >.container {
+#experience>.container {
   width: 80%;
   max-width: 1200px;
   display: flex;
   justify-content: space-around;
   align-items: start;
 }
-.drama-left ,.drama-right{
+
+.drama-left,
+.drama-right {
   width: 45%;
 }
 
-.year{
+.year {
   font-weight: 900;
   margin-top: 30px;
   font-size: 30px;
   color: #b98540;
 }
-.drama-class{
+
+.drama-class {
   font-weight: 600;
   margin-left: 35px;
   margin-top: 15px;
   color: #cfb580;
 }
-.drama-comp{
+
+.drama-comp {
   margin-left: 85px;
   font-size: 18px;
 }
@@ -819,10 +862,11 @@ header {
 /*                                                        portfolio                                                      */
 /*=======================================================================================================================*/
 
-.pf-title{
+.pf-title {
   text-decoration: none;
   color: #DCD7C9;
 }
+
 .film-container {
   width: 100%;
   margin: 50px auto;
@@ -913,11 +957,13 @@ header {
   height: 100%;
 
 }
-h3{
+
+h3 {
   font-size: 22px;
   margin: 0;
   padding: 0;
 }
+
 .back {
   position: absolute;
   padding: 0 10px;
@@ -927,11 +973,11 @@ h3{
   color: white;
   font-weight: bold;
   text-align: center;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 }
 
-.back >div{
+.back>div {
   display: block;
   font-size: 18px;
   color: #020020;
@@ -1010,7 +1056,8 @@ textarea {
   border-radius: 10px;
   padding: 10px;
 }
-.send{
+
+.send {
   width: 120px;
   margin: 0 auto;
   padding: 10px 0;
@@ -1051,102 +1098,139 @@ footer>p {
 /*=======================================================================================================================*/
 
 /* ==========================================================                   平板版 */
-@media screen and (min-width:481px) and (max-width:1023px){
-.container{
-  width: 90%;
-  justify-content: space-around;
+@media screen and (min-width:481px) and (max-width:1023px) {
+  .container {
+    width: 90%;
+    justify-content: space-around;
+  }
+
+  .navbar {
+    margin: 1rem 0;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  .nav_link {
+    width: 100px;
+    height: 80px;
+  }
 }
-.navbar{
-  margin: 1rem 0;
-  font-size: 20px;
-  margin-right: 20px;
-}
-.nav_link {
-  width: 100px;
-  height: 80px;
-}
-}
-h2{
+
+h2 {
   font-size: 46px;
 }
 
-  /*=====================================================================*/
-  /*                      about                                          */
-  /*=====================================================================*/
-  .photo,
-  .about-left {
-    padding: 0px 0;
-    margin: 0px;
-  }
-  .description p ,.education p {
-    padding: 0 0px;
-    font-size: 20px;
-  }
-  /*=====================================================================*/
-  /*                      banner                                          */
-  /*=====================================================================*/
-  .star {
-    margin-top: 0px;
-    height: 80wh;
+/*=====================================================================*/
+/*                      about                                          */
+/*=====================================================================*/
+.photo,
+.about-left {
+  padding: 0px 0;
+  margin: 0px;
+}
+
+.description p,
+.education p {
+  padding: 0 0px;
+  font-size: 20px;
+}
+
+/*=====================================================================*/
+/*                      banner                                          */
+/*=====================================================================*/
+.star {
+  margin-top: 0px;
+  height: 80wh;
+}
+
+/*=====================================================================*/
+/*                      skills                                         */
+/*=====================================================================*/
+#skills{
+  margin-bottom: 0;
+}
+#skills>.star-container {
+  width: 25%;
+  height: 700px;
+}
+
+#skills>.container {
+  width: 80%;
+  margin-left: 170px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-list {
+  width: 70%;
+  padding: 0;
+  list-style: none;
+  letter-spacing: 2px;
+}
+
+.skill-bar {
+  height: 30px;
+}
+
+.skill-container {
+    width: 100%;
+    margin-left: 0;
+    /* padding: 48px,0,48px,0; */
   }
 
-  /*=====================================================================*/
-  /*                      skills                                         */
-  /*=====================================================================*/
-  #skills>.star-container{
-    width: 25%;
-  }
-  #skills>.container {
-    width: 80%;
-    margin-left: 170px;
-    flex-direction: column;
+  .skill-img-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-  }
-
-  .skill-list {
-    width: 70%;
-    padding: 0;
+    padding-left: 0px;
+    gap: 10px;
     list-style: none;
-    letter-spacing: 2px;
   }
-  .skill-bar {
-    height: 30px;
+
+  .skill-img {
+    width: 120px
   }
 
 
 
-  /*=====================================================================*/
-  /*                      experiense                                    */
-  /*=====================================================================*/
-  #experience >.container {
-    justify-content: space-between;
-  }
-  .year{
-    font-size: 28px;
-  }
-  .drama-class{
-    margin-left: 35px;
-    margin-top: 15px;
-    font-size: 22px;
-  }
-  .drama-comp{
-    margin-left: 60px;
-    font-size: 18px;
-  }
+/*=====================================================================*/
+/*                      experiense                                    */
+/*=====================================================================*/
+#experience>.container {
+  justify-content: space-between;
+}
 
-  /*============================================================================*/
-  /*                        contact                                              */
-  /*============================================================================*/
-  .contact-info p{
-    text-indent: 2rem;
-  }
-  .info-item {
-    font-size: 22px;
-  }
-  label{
-    font-style: 18px;
-  }
+.year {
+  font-size: 28px;
+}
+
+.drama-class {
+  margin-left: 35px;
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.drama-comp {
+  margin-left: 60px;
+  font-size: 18px;
+}
+
+/*============================================================================*/
+/*                        contact                                              */
+/*============================================================================*/
+.contact-info p {
+  text-indent: 2rem;
+}
+
+.info-item {
+  font-size: 22px;
+}
+
+label {
+  font-style: 18px;
+}
 
 
 
@@ -1166,11 +1250,12 @@ h2{
   /*============================================================================*/
   /*                      header                                                */
   /*============================================================================*/
-  header{
+  header {
     justify-content: start;
     align-items: center;
   }
-  .menu{
+
+  .menu {
     display: block;
     margin-left: auto;
     margin-right: 30px;
@@ -1204,7 +1289,7 @@ h2{
   #banner h1 {
     width: 50%;
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     margin-top: 50px;
     text-shadow: 10px 5px 15px #4f4f4fc1;
   }
@@ -1214,7 +1299,7 @@ h2{
   }
 
   .frosted-glass {
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     border-bottom-left-radius: 120px;
     height: 35vh;
   }
@@ -1234,6 +1319,7 @@ h2{
   #about p {
     font-size: 16px;
   }
+
   #about h2 {
     margin-bottom: 10px;
   }
@@ -1260,10 +1346,12 @@ h2{
     margin: 0px;
     font-size: 0.8em;
   }
+
   .description h2 {
     margin-bottom: 20px;
   }
-  .education{
+
+  .education {
     margin-top: 30px;
     border: none;
   }
@@ -1271,17 +1359,39 @@ h2{
   /*============================================================================*/
   /*                         skill                                              */
   /*============================================================================*/
-  #skills >.container{
+  #skills>.container {
     width: 100%;
     margin-left: 0;
   }
-  .skill-list {
-    flex-wrap: wrap;
-    margin-top: 20px;
+  
+    .skill-list {
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+  .skill-container {
+    width: 100%;
+    margin-left: 0;
   }
+
+  .skill-img-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0px;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .skill-img {
+    width: 80px
+  }
+
   .skill-bar {
     height: 30px;
   }
+
   .skill-list li {
     width: 100%;
     margin-bottom: 0px;
@@ -1299,10 +1409,10 @@ h2{
     margin-top: 0;
   }
 
-  #skills >.star-container{
+  #skills>.star-container {
     display: flex;
     width: 100%;
-    height: 30vh;  
+    height: 30vh;
     order: -1;
   }
 
@@ -1310,28 +1420,35 @@ h2{
     font-size: 24px;
     margin-top: 15px;
   }
-  .skill-bar{
+
+  .skill-bar {
     font-size: 20px;
   }
+
   /*============================================================================*/
   /*                       experience                                           */
   /*============================================================================*/
-  #experience  >.container{
+  #experience>.container {
     width: 75%;
   }
-  .year{
+
+  .year {
     font-size: 30px;
     margin-bottom: 5px;
   }
-  .drama-left ,.drama-right{
+
+  .drama-left,
+  .drama-right {
     width: 100%;
   }
-  .drama-class{
+
+  .drama-class {
     margin-top: 10px;
     margin-left: 20px;
     font-style: 20px;
   }
-  .drama-comp{
+
+  .drama-comp {
     margin-left: 40px;
     font-size: 16px;
   }
@@ -1354,15 +1471,19 @@ h2{
     grid-area: unset;
     min-height: 100px;
   }
-  .copy{
+
+  .copy {
     order: -3;
   }
-  .titan{
+
+  .titan {
     order: -2;
   }
-  .seka{
+
+  .seka {
     order: -1;
   }
+
   .item {
     width: 42%;
     height: auto;
