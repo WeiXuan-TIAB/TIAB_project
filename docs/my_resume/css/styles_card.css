@@ -622,9 +622,16 @@ header {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;
 }
+
+.skills-container {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
 
 #skills {
   padding-bottom: 2rem;
@@ -1179,7 +1186,6 @@ h2 {
 
 .skill-container {
   width: 100%;
-  margin-left: 0;
   /* padding: 48px,0,48px,0; */
 }
 
