@@ -14,9 +14,21 @@
 
 <body>
     <header>
-        <div class="logo"><img src="imgs/TIAB_logo.png" alt=""></div>
-        <!-- <div class="menu-icon">menu</div> -->
-        <div class="menu"><i class="fa-solid fa-bars"></i></div>
+        <div class="logo"><img src="imgs/TIAB_logo.png" alt="TIAB"></div>
+
+        <div id="menu-bar" class="menu" aria-label="Open menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+            <div>
+                <ul class="navbar">
+                    <li><a href="#about" class="nav_link">About</a></li>
+                    <li><a href="#skills" class="nav_link">Skills</a></li>
+                    <li><a href="#experience" class="nav_link">Experience</a></li>
+                    <li><a href="#portfolio" class="nav_link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav_link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
         <nav>
             <ul class="navbar">
                 <li><a href="#about" class="nav_link">About</a></li>
@@ -41,12 +53,8 @@
                 <div class="frosted-glass">
                     <h1 class="text-flicker-in-glow">VFX compositor<br>X<br>Full Stack Developer</h1>
                 </div>
-
             </div>
         </div>
-        </div>
-
-
     </section>
 
     <section id="about">
@@ -68,10 +76,8 @@
                         <p>南臺科技大學<br>
                             多媒體與電腦娛樂科學系研究所</p>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -227,7 +233,6 @@
             </div>
     </section>
 
-    </section>
     <section id="portfolio">
         <h2><a class="pf-title"
                 href="https://drive.google.com/file/d/1OuIUs2oXBmm0CMF6Me4wL6Uze2FgLJ3Y/view?usp=drive_link"
@@ -359,19 +364,39 @@
                     <textarea id="message" name="message" rows="5" cols="30" placeholder="請輸入訊息"></textarea>
                     <button class="send"><i class="fa-solid fa-cat"></i> SEND</button>
                 </form>
-
             </div>
-
         </div>
         </div>
     </section>
-
 
     <footer>
         <p>僅作練習使用</p>
         <p>Copyright &copy; 2025</p>
     </footer>
 
+    <script>
+        const menuBar = document.querySelector('#menu-bar')
+        const menuIcon = menuBar.querySelector('.fa-bars')
+        const menuList = menuBar.querySelector('.navbar')
+
+        menuBar.addEventListener('click', (e) => {
+            if (e.target === menuBar || e.target === menuIcon) {
+                menuBar.classList.toggle('open')
+            }
+        })
+
+        menuList.addEventListener('click', (e) => {
+            if (e.target.matches('.nav_link')) {
+                menuBar.classList.remove('open')
+            }
+        })
+
+        document.addEventListener('click', (e) => {
+            if (!menuBar.contains(e.target)) {
+                menuBar.classList.remove('open')
+            }
+        })
+    </script>
 
 </body>
 

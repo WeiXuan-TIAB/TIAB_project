@@ -41,6 +41,7 @@ h2 {
   display: none;
 }
 
+
 .logo {
   width: 200px;
   height: 100px;
@@ -70,10 +71,11 @@ h2 {
   align-items: center;
 }
 
-.nav_link:hover {
-  /* background-color: #4D6473; */
-  background-image: linear-gradient(to bottom, #2d4c96, #2d2d965e, #02001717);
-  border-radius: 15px;
+@media (hover: hover) and (pointer: fine) {
+  .nav_link:hover {
+    background-image: linear-gradient(to bottom, #2d4c96, #2d2d965e, #02001717);
+    border-radius: 15px;
+  }
 }
 
 header {
@@ -82,10 +84,11 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background-image: linear-gradient(to bottom, #020017, #0a0a1f, #111e3c00);
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 20;
+  padding: 0 16px;
+  background-image: linear-gradient(to bottom, #020017, #0a0a1f, #111e3c00);
 }
 
 /*=======================================================================================================================*/
@@ -438,7 +441,7 @@ header {
   position: absolute;
   opacity: 0.8;
   animation: float 4s ease-in-out infinite, twinkle 2s ease-in-out infinite;
-  transition: 05s;
+  transition: 3s;
 }
 
 
@@ -1146,9 +1149,10 @@ h2 {
 /*=====================================================================*/
 /*                      skills                                         */
 /*=====================================================================*/
-#skills{
+#skills {
   margin-bottom: 0;
 }
+
 #skills>.star-container {
   width: 25%;
   height: 700px;
@@ -1174,24 +1178,24 @@ h2 {
 }
 
 .skill-container {
-    width: 100%;
-    margin-left: 0;
-    /* padding: 48px,0,48px,0; */
-  }
+  width: 100%;
+  margin-left: 0;
+  /* padding: 48px,0,48px,0; */
+}
 
-  .skill-img-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0px;
-    gap: 10px;
-    list-style: none;
-  }
+.skill-img-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0px;
+  gap: 10px;
+  list-style: none;
+}
 
-  .skill-img {
-    width: 120px
-  }
+.skill-img {
+  width: 120px
+}
 
 
 
@@ -1229,7 +1233,7 @@ h2 {
 }
 
 label {
-  font-style: 18px;
+  font-size: 18px;
 }
 
 
@@ -1255,360 +1259,444 @@ label {
     align-items: center;
   }
 
+  nav {
+    display: none;
+  }
+
   .menu {
     display: block;
     margin-left: auto;
-    margin-right: 30px;
+    margin-right: 8px;
+    cursor: pointer;
   }
 
-  .logo {
-    width: 150px;
-    height: 80px;
+  #menu-bar {
+    position: relative;
   }
 
-  .navbar {
-    /* width: 100%; */
-    display: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-  }
+  #menu-bar .navbar {
+  display: block;                 /* 讓容器存在，才能做高度轉場 */
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: min(80vw, 320px);
+  border-radius: 12px;
+  overflow: hidden;
 
-  .nav_link {
-    width: 100vw;
-  }
+  /* 關閉狀態 - 重點！把背景/內外距/陰影歸零，避免殘影 */
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  max-height: 0;
+  opacity: 0;
 
-  .container {
-    flex-direction: column;
-  }
+  transition:
+    max-height .3s ease,
+    padding .3s ease,
+    opacity .2s ease;
+}
 
-  /*============================================================================*/
-  /*                       banner                                               */
-  /*============================================================================*/
+#menu-bar.open .navbar {
+  /* 開啟狀態 */
+  margin-top: 8px;
+  padding: 8px 0;
+  background: rgba(10,10,31,.95);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  max-height: 60vh;
+  opacity: 1;
+}
 
-  #banner h1 {
-    width: 50%;
-    text-align: center;
-    font-size: 24px;
-    margin-top: 50px;
-    text-shadow: 10px 5px 15px #4f4f4fc1;
-  }
+#menu-bar > div { display: contents; }
 
-  #banner .container {
-    height: 40vh;
-  }
-
-  .frosted-glass {
-    padding-bottom: 80px;
-    border-bottom-left-radius: 120px;
-    height: 35vh;
-  }
-
-  .star {
-    margin-top: 80px;
-  }
-
-  /*============================================================================*/
-  /*                        about                                               */
-  /*============================================================================*/
-
-  #about {
-    margin-top: 10px;
-  }
-
-  #about p {
-    font-size: 16px;
-  }
-
-  #about h2 {
-    margin-bottom: 10px;
-  }
-
-  .about-left {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    padding: 10px 0;
-    order: -1;
-  }
-
-  .photo,
-  .description {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px 0;
-    margin: 0;
-  }
-
-  .description p {
-    margin: 0px;
-    font-size: 0.8em;
-  }
-
-  .description h2 {
-    margin-bottom: 20px;
-  }
-
-  .education {
-    margin-top: 30px;
-    border: none;
-  }
-
-  /*============================================================================*/
-  /*                         skill                                              */
-  /*============================================================================*/
-  #skills>.container {
-    width: 100%;
-    margin-left: 0;
-  }
-  
-    .skill-list {
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-  .skill-container {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .skill-img-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0px;
-    gap: 20px;
-    list-style: none;
-  }
-
-  .skill-img {
-    width: 80px
-  }
-
-  .skill-bar {
-    height: 30px;
-  }
-
-  .skill-list li {
-    width: 100%;
-    margin-bottom: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: 900;
-  }
-
-  #skills {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-  }
-
-  #skills>.star-container {
-    display: flex;
-    width: 100%;
-    height: 30vh;
-    order: -1;
-  }
-
-  .skill-name {
-    font-size: 24px;
-    margin-top: 15px;
-  }
-
-  .skill-bar {
-    font-size: 20px;
-  }
-
-  /*============================================================================*/
-  /*                       experience                                           */
-  /*============================================================================*/
-  #experience>.container {
-    width: 75%;
-  }
-
-  .year {
-    font-size: 30px;
-    margin-bottom: 5px;
-  }
-
-  .drama-left,
-  .drama-right {
+  /* 手機選單的項目全寬排列 */
+  #menu-bar .navbar li {
     width: 100%;
   }
 
-  .drama-class {
-    margin-top: 10px;
-    margin-left: 20px;
-    font-style: 20px;
-  }
-
-  .drama-comp {
-    margin-left: 40px;
-    font-size: 16px;
-  }
-
-  /*============================================================================*/
-  /*                       portfolio                                            */
-  /*============================================================================*/
-
-  .film-container {
-    width: 85%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /* grid-template-columns: 1fr; /* 每列只一張卡片 */
-    /* grid-template-rows: auto; */
-  }
-
-  .film-item {
-    margin-bottom: 25px;
-    grid-area: unset;
-    min-height: 100px;
-  }
-
-  .copy {
-    order: -3;
-  }
-
-  .titan {
-    order: -2;
-  }
-
-  .seka {
-    order: -1;
-  }
-
-  .item {
-    width: 42%;
+  #menu-bar .nav_link {
+    width: 100%;
     height: auto;
-    ;
-
+    padding: 12px 16px;
+    justify-content: flex-start;
   }
 
-  .container .item p {
-    padding: 20px;
-    font-size: 0.65em;
-
-  }
-
-
-  .tub {
-    order: 1;
-  }
-
-  .copy {
-    order: 2;
-  }
-
-  .item:nth-child(6) {
-    order: 2;
-  }
-
-  .film-container:hover .film-item {
-    filter: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .film-container:hover .film-item:hover {
-    filter: none;
-    transform: none;
-    opacity: 1;
-  }
-
-  /* 點擊時放大 */
-  .film-item.active {
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
-    z-index: 2;
-  }
-
-  /*============================================================================*/
-  /*                       contact                                              */
-  /*============================================================================*/
-
-  #contact {
-    margin-bottom: 50px;
-  }
-
-  #contact .container {
-    width: 90%;
+  /* 開啟時加遮罩，避免點到背景 */
+  #menu-bar.open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: -1;
   }
 
 
-  .contact-info {
-    width: 100%;
-    text-align: center;
+.logo {
+  width: 150px;
+  height: 80px;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar {
+  /* width: 100%; */
+  display: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav_link {
+  width: 100vw;
+}
+
+.container {
+  flex-direction: column;
+}
+
+/*============================================================================*/
+/*                       banner                                               */
+/*============================================================================*/
+
+#banner h1 {
+  width: 50%;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+  text-shadow: 10px 5px 15px #4f4f4fc1;
+}
+
+#banner .container {
+  height: 40vh;
+}
+
+.frosted-glass {
+  padding-bottom: 80px;
+  border-bottom-left-radius: 120px;
+  height: 35vh;
+}
+
+.star {
+  margin-top: 80px;
+}
+
+/*============================================================================*/
+/*                        about                                               */
+/*============================================================================*/
+
+#about {
+  margin-top: 10px;
+}
+
+#about p {
+  font-size: 16px;
+}
+
+#about h2 {
+  margin-bottom: 10px;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  order: -1;
+}
+
+.photo,
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.description p {
+  margin: 0px;
+  font-size: 0.8em;
+}
+
+.description h2 {
+  margin-bottom: 20px;
+}
+
+.education {
+  margin-top: 30px;
+  border: none;
+}
+
+/*============================================================================*/
+/*                         skill                                              */
+/*============================================================================*/
+#skills>.container {
+  width: 100%;
+  margin-left: 0;
+}
+
+.skill-list {
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.skill-container {
+  width: 100%;
+  margin-left: 0;
+}
+
+.skill-img-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0px;
+  gap: 20px;
+  list-style: none;
+}
+
+.skill-img {
+  width: 80px
+}
+
+.skill-bar {
+  height: 30px;
+}
+
+.skill-list li {
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+#skills>.star-container {
+  display: flex;
+  width: 100%;
+  height: 30vh;
+  order: -1;
+}
+
+.skill-name {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.skill-bar {
+  font-size: 20px;
+}
+
+/*============================================================================*/
+/*                       experience                                           */
+/*============================================================================*/
+#experience>.container {
+  width: 75%;
+}
+
+.year {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.drama-left,
+.drama-right {
+  width: 100%;
+}
+
+.drama-class {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-style: 20px;
+}
+
+.drama-comp {
+  margin-left: 40px;
+  font-size: 16px;
+}
+
+/*============================================================================*/
+/*                       portfolio                                            */
+/*============================================================================*/
+
+.film-container {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* grid-template-columns: 1fr; /* 每列只一張卡片 */
+  /* grid-template-rows: auto; */
+}
+
+.film-item {
+  margin-bottom: 25px;
+  grid-area: unset;
+  min-height: 100px;
+}
+
+.copy {
+  order: -3;
+}
+
+.titan {
+  order: -2;
+}
+
+.seka {
+  order: -1;
+}
+
+.item {
+  width: 42%;
+  height: auto;
+  ;
+
+}
+
+.container .item p {
+  padding: 20px;
+  font-size: 0.65em;
+
+}
+
+
+.tub {
+  order: 1;
+}
+
+.copy {
+  order: 2;
+}
+
+.item:nth-child(6) {
+  order: 2;
+}
+
+.film-container:hover .film-item {
+  filter: none;
+  opacity: 1;
+  transform: none;
+}
+
+.film-container:hover .film-item:hover {
+  filter: none;
+  transform: none;
+  opacity: 1;
+}
+
+/* 點擊時放大 */
+.film-item.active {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+/*============================================================================*/
+/*                       contact                                              */
+/*============================================================================*/
+
+#contact {
+  margin-bottom: 50px;
+}
+
+#contact .container {
+  width: 90%;
+}
+
+
+.contact-info {
+  width: 100%;
+  text-align: center;
+}
+
+.contact-info h2 {
+  text-align: center;
+}
+
+.pl_info-list {
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.info-item {
+  font-size: 16px;
+  padding: 0;
+}
+
+.info-item i {
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  order: 1;
+}
+
+label {
+  text-align: center;
+}
+
+label,
+textarea {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.pl_info-list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pl_info-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+
+form>input {
+  border-radius: 7px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+footer {
+  font-size: 0.5em;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .nav_link:active,
+  .nav_link:focus {
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
-  .contact-info h2 {
-    text-align: center;
+  a, button {
+    -webkit-tap-highlight-color: transparent;
   }
-
-  .pl_info-list {
-    margin: 0 auto;
-    margin-bottom: 100px;
-  }
-
-  .info-item {
-    font-size: 16px;
-    padding: 0;
-  }
-
-  .info-item i {
-    font-size: 22px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .contact-form {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    order: 1;
-  }
-
-  label {
-    text-align: center;
-  }
-
-  label,
-  textarea {
-    margin-top: 10px;
-    font-size: 18px;
-  }
-
-  .pl_info-list {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pl_info-list li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-
-  form>input {
-    border-radius: 7px;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  footer {
-    font-size: 0.5em;
-  }
-
+}
 
 }
