@@ -2,7 +2,7 @@
 
 [首頁](https://weixuan-tiab.github.io/TIAB_project/)
 
-| 專案名稱 | 框架 | 靜態頁面 | 程式碼 | 響應式網頁 |
+| 專案名稱 | 框架 | 頁面 | 程式碼 | 響應式網頁 |
 | :-- | :--: | :--: | :--: | :--: |
 | 個人履歷 | 純CSS | [連結](https://weixuan-tiab.github.io/TIAB_project/my_resume/) | [連結](./docs/my_resume/) | ✓ |
 | Petopia (商城及購物車) | React + Express | [連結](https://petopia-frontend-lake.vercel.app/) | 無 | ✓ |
