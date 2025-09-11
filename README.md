@@ -1,6 +1,7 @@
-# 靜態切版練習
+# 靜態切版及前後端專案作品集
 
 [首頁](https://weixuan-tiab.github.io/TIAB_project/)
+[Petopia - 商城及購物車前後端製作](https://petopia-frontend-lake.vercel.app/)
 
 | 專案名稱 | 框架 | 頁面 | 程式碼 | 響應式網頁 |
 | :-- | :--: | :--: | :--: | :--: |
