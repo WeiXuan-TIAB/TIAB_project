@@ -10,4 +10,4 @@
 | Petopia (商城及購物車) | React + Express | [連結](https://petopia-frontend-lake.vercel.app/) | 無 | ✓ |
 | 商城列表 | React | [連結](https://weixuan-tiab.github.io/TIAB_project/pet-product/product/) | [連結](./docs/pet-product/) | ✓ |
 | 商品詳細頁 | React | [連結](https://weixuan-tiab.github.io/TIAB_project/pet-product/product/info/) | [連結](./docs/pet-product/) | ✓ |
-| hippo_note | Vue3 | [連結](https://weixuan-tiab.github.io/TIAB_project/hippo_note/#/) | [連結](./docs/hippo_note/) | ✓ |
+| hippo_note | Vue3 | [連結](https://weixuan-tiab.github.io/TIAB_project/hippo_note/#/) | [連結]([./docs/hippo_note/](https://github.com/WeiXuan-TIAB/hippo_note/tree/main)) | ✓ |
